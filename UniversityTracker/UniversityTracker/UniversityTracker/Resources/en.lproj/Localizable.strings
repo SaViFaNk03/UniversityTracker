@@ -1,0 +1,147 @@
+/* Tab Items */
+"Dashboard" = "Dashboard";
+"Exams" = "Exams";
+"Calendar" = "Calendar";
+"Analytics" = "Analytics";
+"Settings" = "Settings";
+
+/* Dashboard */
+"Overview" = "Overview";
+"Credits Earned" = "Credits Earned";
+"Average (110)" = "Average (110)";
+"Weighted Average (110)" = "Weighted Average (110)";
+"Exams Passed" = "Exams Passed";
+"Progress Toward Degree" = "Progress Toward Degree";
+"completed" = "completed";
+"No exams to display" = "No exams to display";
+"No grades to display" = "No grades to display";
+"Exam Status" = "Exam Status";
+"Grade Distribution" = "Grade Distribution";
+
+/* Exam Statuses */
+"Passed" = "Passed";
+"Failed" = "Failed";
+"Planned" = "Planned";
+
+/* Exams Management */
+"Exam Management" = "Exam Management";
+"Filter" = "Filter";
+"All Exams" = "All Exams";
+"Add Exam" = "Add Exam";
+"Edit Exam" = "Edit Exam";
+"Delete Exam" = "Delete Exam";
+"Schedule" = "Schedule";
+"ID" = "ID";
+"Exam Name" = "Exam Name";
+"Credits" = "Credits";
+"Grade" = "Grade";
+"Status" = "Status";
+"Date" = "Date";
+"Actions" = "Actions";
+"Save" = "Save";
+"Cancel" = "Cancel";
+"Notes" = "Notes";
+"Delete Confirmation" = "Delete Confirmation";
+"Are you sure you want to delete this exam? This action cannot be undone." = "Are you sure you want to delete this exam? This action cannot be undone.";
+"Delete" = "Delete";
+"Exam Details" = "Exam Details";
+"Select Exam" = "Select Exam";
+"None" = "None";
+
+/* Calendar */
+"Academic Calendar" = "Academic Calendar";
+"Today" = "Today";
+"Add Event" = "Add Event";
+"Add Academic Session" = "Add Academic Session";
+"Events for" = "Events for";
+"No events for this date" = "No events for this date";
+"Event Details" = "Event Details";
+"Time" = "Time";
+"Title" = "Title";
+"Type" = "Type";
+"Location" = "Location";
+"All Day" = "All Day";
+"Start Date" = "Start Date";
+"End Date" = "End Date";
+"Color" = "Color";
+"Session Details" = "Session Details";
+"Start" = "Start";
+"End" = "End";
+"Related Exam" = "Related Exam";
+
+/* Event Types */
+"Personal" = "Personal";
+"Exam" = "Exam";
+"Study" = "Study";
+"Meeting" = "Meeting";
+"Other" = "Other";
+
+/* Analytics */
+"Analysis Type" = "Analysis Type";
+"Target Grades" = "Target Grades";
+"Trends" = "Trends";
+"Grade Trends" = "Grade Trends";
+"Credits Accumulation" = "Credits Accumulation";
+"No data to display" = "No data to display";
+"Target Calculation" = "Target Calculation";
+"Target Parameters" = "Target Parameters";
+"Target Average (scale 110)" = "Target Average (scale 110)";
+"Calculate" = "Calculate";
+"Reset All Auto Grades" = "Reset All Auto Grades";
+"Auto Mode" = "Auto Mode";
+"Manual Mode" = "Manual Mode";
+"Mode" = "Mode";
+"Required Grades for Target" = "Required Grades for Target";
+"No planned exams to calculate required grades" = "No planned exams to calculate required grades";
+"Double-click on a grade in the table to edit it manually. Other grades will be recalculated automatically." = "Double-click on a grade in the table to edit it manually. Other grades will be recalculated automatically.";
+"Freely modify grades to see how they affect your final average." = "Freely modify grades to see how they affect your final average.";
+"Set Target Grade" = "Set Target Grade";
+"Target Grade" = "Target Grade";
+"Reset to Automatic Calculation" = "Reset to Automatic Calculation";
+"Projected Weighted Average" = "Projected Weighted Average";
+"Cumulative Average" = "Cumulative Average";
+
+/* Chart Labels */
+"Count" = "Count";
+"Exam" = "Exam";
+"Credits" = "Credits";
+
+/* Settings */
+"Degree Settings" = "Degree Settings";
+"Degree Name" = "Degree Name";
+"Total Credits Required" = "Total Credits Required";
+"Grading System" = "Grading System";
+"Maximum Grade" = "Maximum Grade";
+"Passing Threshold" = "Passing Threshold";
+"Target Settings" = "Target Settings";
+"Appearance" = "Appearance";
+"Dark Mode" = "Dark Mode";
+"Data Management" = "Data Management";
+"Export Data" = "Export Data";
+"Import Data" = "Import Data";
+"Reset All Data" = "Reset All Data";
+"Save Settings" = "Save Settings";
+"Pass threshold cannot be greater than maximum grade." = "Pass threshold cannot be greater than maximum grade.";
+"Your settings have been saved successfully." = "Your settings have been saved successfully.";
+"Data exported successfully." = "Data exported successfully.";
+"Failed to export data: " = "Failed to export data: ";
+"Data imported successfully. Please restart the application." = "Data imported successfully. Please restart the application.";
+"Failed to import data: " = "Failed to import data: ";
+"Confirm Reset" = "Confirm Reset";
+"This will delete ALL your data including exams and settings. This action cannot be undone. Are you sure?" = "This will delete ALL your data including exams and settings. This action cannot be undone. Are you sure?";
+"Final Confirmation" = "Final Confirmation";
+"ALL DATA WILL BE PERMANENTLY DELETED. Proceed?" = "ALL DATA WILL BE PERMANENTLY DELETED. Proceed?";
+"All data has been reset to default." = "All data has been reset to default.";
+"Failed to reset data: " = "Failed to reset data: ";
+"Success" = "Success";
+"Error" = "Error";
+"Yes" = "Yes";
+
+/* Calendar Days */
+"Mon" = "Mon";
+"Tue" = "Tue";
+"Wed" = "Wed";
+"Thu" = "Thu";
+"Fri" = "Fri";
+"Sat" = "Sat";
+"Sun" = "Sun";

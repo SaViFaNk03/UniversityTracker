@@ -1,0 +1,147 @@
+/* Tab Items */
+"Dashboard" = "Panoramica";
+"Exams" = "Esami";
+"Calendar" = "Calendario";
+"Analytics" = "Analisi";
+"Settings" = "Impostazioni";
+
+/* Dashboard */
+"Overview" = "Panoramica";
+"Credits Earned" = "CFU Conseguiti";
+"Average (110)" = "Media (110)";
+"Weighted Average (110)" = "Media Ponderata (110)";
+"Exams Passed" = "Esami Superati";
+"Progress Toward Degree" = "Progresso Verso la Laurea";
+"completed" = "completato";
+"No exams to display" = "Nessun esame da visualizzare";
+"No grades to display" = "Nessun voto da visualizzare";
+"Exam Status" = "Stato Esami";
+"Grade Distribution" = "Distribuzione dei Voti";
+
+/* Exam Statuses */
+"Passed" = "Superato";
+"Failed" = "Non Superato";
+"Planned" = "Pianificato";
+
+/* Exams Management */
+"Exam Management" = "Gestione Esami";
+"Filter" = "Filtro";
+"All Exams" = "Tutti gli Esami";
+"Add Exam" = "Aggiungi Esame";
+"Edit Exam" = "Modifica Esame";
+"Delete Exam" = "Elimina Esame";
+"Schedule" = "Pianifica";
+"ID" = "ID";
+"Exam Name" = "Nome Esame";
+"Credits" = "CFU";
+"Grade" = "Voto";
+"Status" = "Stato";
+"Date" = "Data";
+"Actions" = "Azioni";
+"Save" = "Salva";
+"Cancel" = "Annulla";
+"Notes" = "Note";
+"Delete Confirmation" = "Conferma Eliminazione";
+"Are you sure you want to delete this exam? This action cannot be undone." = "Sei sicuro di voler eliminare questo esame? Questa azione non può essere annullata.";
+"Delete" = "Elimina";
+"Exam Details" = "Dettagli Esame";
+"Select Exam" = "Seleziona Esame";
+"None" = "Nessuno";
+
+/* Calendar */
+"Academic Calendar" = "Calendario Accademico";
+"Today" = "Oggi";
+"Add Event" = "Aggiungi Evento";
+"Add Academic Session" = "Aggiungi Sessione";
+"Events for" = "Eventi del";
+"No events for this date" = "Nessun evento per questa data";
+"Event Details" = "Dettagli Evento";
+"Time" = "Ora";
+"Title" = "Titolo";
+"Type" = "Tipo";
+"Location" = "Luogo";
+"All Day" = "Tutto il giorno";
+"Start Date" = "Data Inizio";
+"End Date" = "Data Fine";
+"Color" = "Colore";
+"Session Details" = "Dettagli Sessione";
+"Start" = "Inizio";
+"End" = "Fine";
+"Related Exam" = "Esame Correlato";
+
+/* Event Types */
+"Personal" = "Personale";
+"Exam" = "Esame";
+"Study" = "Studio";
+"Meeting" = "Riunione";
+"Other" = "Altro";
+
+/* Analytics */
+"Analysis Type" = "Tipo di Analisi";
+"Target Grades" = "Voti Target";
+"Trends" = "Tendenze";
+"Grade Trends" = "Andamento Voti";
+"Credits Accumulation" = "Accumulo CFU";
+"No data to display" = "Nessun dato da visualizzare";
+"Target Calculation" = "Calcolo Voti Target";
+"Target Parameters" = "Parametri Obiettivo";
+"Target Average (scale 110)" = "Media Obiettivo (scala 110)";
+"Calculate" = "Calcola";
+"Reset All Auto Grades" = "Ripristina Tutti i Voti Automatici";
+"Auto Mode" = "Modalità Automatica";
+"Manual Mode" = "Modalità Libera";
+"Mode" = "Modalità";
+"Required Grades for Target" = "Voti Necessari per l'Obiettivo";
+"No planned exams to calculate required grades" = "Nessun esame pianificato per calcolare i voti richiesti";
+"Double-click on a grade in the table to edit it manually. Other grades will be recalculated automatically." = "Doppio click su un voto nella tabella per modificarlo manualmente. Gli altri voti verranno ricalcolati automaticamente.";
+"Freely modify grades to see how they affect your final average." = "Modifica liberamente i voti per vedere come cambia la media finale.";
+"Set Target Grade" = "Imposta Voto Target";
+"Target Grade" = "Voto Target";
+"Reset to Automatic Calculation" = "Ripristina Calcolo Automatico";
+"Projected Weighted Average" = "Media Ponderata Prevista";
+"Cumulative Average" = "Media Cumulativa";
+
+/* Chart Labels */
+"Count" = "Conteggio";
+"Exam" = "Esame";
+"Credits" = "CFU";
+
+/* Settings */
+"Degree Settings" = "Impostazioni Corso di Laurea";
+"Degree Name" = "Nome Corso di Laurea";
+"Total Credits Required" = "CFU Totali Richiesti";
+"Grading System" = "Sistema di Valutazione";
+"Maximum Grade" = "Voto Massimo";
+"Passing Threshold" = "Soglia di Superamento";
+"Target Settings" = "Impostazioni Obiettivo";
+"Appearance" = "Aspetto";
+"Dark Mode" = "Modalità Scura";
+"Data Management" = "Gestione Dati";
+"Export Data" = "Esporta Dati";
+"Import Data" = "Importa Dati";
+"Reset All Data" = "Reimposta Tutti i Dati";
+"Save Settings" = "Salva Impostazioni";
+"Pass threshold cannot be greater than maximum grade." = "La soglia di superamento non può essere maggiore del voto massimo.";
+"Your settings have been saved successfully." = "Le tue impostazioni sono state salvate con successo.";
+"Data exported successfully." = "Dati esportati con successo.";
+"Failed to export data: " = "Impossibile esportare i dati: ";
+"Data imported successfully. Please restart the application." = "Dati importati con successo. Riavvia l'applicazione.";
+"Failed to import data: " = "Impossibile importare i dati: ";
+"Confirm Reset" = "Conferma Reimpostazione";
+"This will delete ALL your data including exams and settings. This action cannot be undone. Are you sure?" = "Questo eliminerà TUTTI i tuoi dati, inclusi esami e impostazioni. Questa azione non può essere annullata. Sei sicuro?";
+"Final Confirmation" = "Conferma Finale";
+"ALL DATA WILL BE PERMANENTLY DELETED. Proceed?" = "TUTTI I DATI SARANNO ELIMINATI PERMANENTEMENTE. Procedere?";
+"All data has been reset to default." = "Tutti i dati sono stati reimpostati ai valori predefiniti.";
+"Failed to reset data: " = "Impossibile reimpostare i dati: ";
+"Success" = "Operazione Riuscita";
+"Error" = "Errore";
+"Yes" = "Sì";
+
+/* Calendar Days */
+"Mon" = "Lun";
+"Tue" = "Mar";
+"Wed" = "Mer";
+"Thu" = "Gio";
+"Fri" = "Ven";
+"Sat" = "Sab";
+"Sun" = "Dom";
