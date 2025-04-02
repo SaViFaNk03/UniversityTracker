@@ -138,7 +138,31 @@ struct PieChartView: View {
 }
 
 // Simple pie slice for iOS 15 fallback
-
+struct PieSliceView: View {
+    var startAngle: Double
+    var endAngle: Double
+    var color: Color
+    
+    var body: some View {
+        GeometryReader { geometry in
+            Path { path in
+                let center = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                let radius = min(geometry.size.width, geometry.size.height) / 2
+                
+                path.move(to: center)
+                path.addArc(
+                    center: center,
+                    radius: radius,
+                    startAngle: .degrees(startAngle - 90),
+                    endAngle: .degrees(endAngle - 90),
+                    clockwise: false
+                )
+                path.closeSubpath()
+            }
+            .fill(color)
+        }
+    }
+}
 
 struct PieChartView_Previews: PreviewProvider {
     static var previews: some View {
