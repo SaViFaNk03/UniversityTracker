@@ -1,9 +1,9 @@
 import SwiftUI
-import CoreData
 import UniformTypeIdentifiers
 
 struct SettingsView: View {
     @EnvironmentObject private var appSettings: AppSettings
+    @EnvironmentObject private var themeManager: ThemeManager
     @Environment(\.managedObjectContext) private var viewContext
     @State private var isImporting = false
     @State private var isExporting = false
@@ -13,6 +13,7 @@ struct SettingsView: View {
     @State private var successMessage = ""
     @State private var showingErrorMessage = false
     @State private var errorMessage = ""
+    @State private var showThemeSettings = false
     
     @State private var degreeName: String
     @State private var totalCredits: Int
@@ -36,64 +37,133 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 // Degree settings section
-                Section(header: Text(NSLocalizedString("Degree Settings", comment: "Section title"))) {
+                Section(header: Text(NSLocalizedString("Degree Settings", comment: "Section title"))
+                    .foregroundColor(themeManager.colors.secondaryText)) {
                     TextField(NSLocalizedString("Degree Name", comment: "Field label"), text: $degreeName)
+                        .foregroundColor(themeManager.colors.text)
                     
                     Stepper(value: $totalCredits, in: 1...500) {
                         HStack {
                             Text(NSLocalizedString("Total Credits Required", comment: "Field label"))
+                                .foregroundColor(themeManager.colors.text)
                             Spacer()
                             Text("\(totalCredits)")
-                                .foregroundColor(.secondary)
+                                .foregroundColor(themeManager.colors.secondaryText)
                         }
                     }
                 }
+                .listRowBackground(themeManager.colors.secondaryBackground)
                 
                 // Grading system section
-                Section(header: Text(NSLocalizedString("Grading System", comment: "Section title"))) {
+                Section(header: Text(NSLocalizedString("Grading System", comment: "Section title"))
+                    .foregroundColor(themeManager.colors.secondaryText)) {
                     Stepper(value: $maxGrade, in: 1...100) {
                         HStack {
                             Text(NSLocalizedString("Maximum Grade", comment: "Field label"))
+                                .foregroundColor(themeManager.colors.text)
                             Spacer()
                             Text("\(maxGrade)")
-                                .foregroundColor(.secondary)
+                                .foregroundColor(themeManager.colors.secondaryText)
                         }
                     }
                     
                     Stepper(value: $passThreshold, in: 1...$maxGrade.wrappedValue) {
                         HStack {
                             Text(NSLocalizedString("Passing Threshold", comment: "Field label"))
+                                .foregroundColor(themeManager.colors.text)
                             Spacer()
                             Text("\(passThreshold)")
-                                .foregroundColor(.secondary)
+                                .foregroundColor(themeManager.colors.secondaryText)
                         }
                     }
                 }
+                .listRowBackground(themeManager.colors.secondaryBackground)
                 
                 // Target settings section
-                Section(header: Text(NSLocalizedString("Target Settings", comment: "Section title"))) {
+                Section(header: Text(NSLocalizedString("Target Settings", comment: "Section title"))
+                    .foregroundColor(themeManager.colors.secondaryText)) {
                     Stepper(value: $targetAverage, in: 18...110) {
                         HStack {
                             Text(NSLocalizedString("Target Average (110 scale)", comment: "Field label"))
+                                .foregroundColor(themeManager.colors.text)
                             Spacer()
                             Text("\(targetAverage)")
-                                .foregroundColor(.secondary)
+                                .foregroundColor(themeManager.colors.secondaryText)
                         }
                     }
                 }
+                .listRowBackground(themeManager.colors.secondaryBackground)
                 
                 // Appearance section
-                Section(header: Text(NSLocalizedString("Appearance", comment: "Section title"))) {
-                    Toggle(NSLocalizedString("Dark Mode", comment: "Field label"), isOn: $isDarkMode)
+                Section(header: Text(NSLocalizedString("Appearance", comment: "Section title"))
+                    .foregroundColor(themeManager.colors.secondaryText)) {
+                    
+                    NavigationLink(
+                        destination: ThemeSettingsView()
+                            .environmentObject(themeManager)
+                            .navigationTitle(NSLocalizedString("Theme Settings", comment: "View title")),
+                        isActive: $showThemeSettings
+                    ) {
+                        HStack {
+                            Text(NSLocalizedString("Theme", comment: "Field label"))
+                                .foregroundColor(themeManager.colors.text)
+                            
+                            Spacer()
+                            
+                            // Visualizzazione della modalità attuale
+                            HStack(spacing: 6) {
+                                if themeManager.followSystemTheme {
+                                    Image(systemName: "iphone")
+                                        .foregroundColor(themeManager.colors.primary)
+                                        .imageScale(.small)
+                                    
+                                    Text(NSLocalizedString("Auto", comment: "Theme mode"))
+                                        .foregroundColor(themeManager.colors.secondaryText)
+                                } else {
+                                    Image(systemName: themeManager.isDarkMode ? "moon.fill" : "sun.max.fill")
+                                        .foregroundColor(themeManager.isDarkMode ? .yellow : .orange)
+                                        .imageScale(.small)
+                                    
+                                    Text(themeManager.isDarkMode ? 
+                                         NSLocalizedString("Dark", comment: "Theme mode") : 
+                                         NSLocalizedString("Light", comment: "Theme mode"))
+                                        .foregroundColor(themeManager.colors.secondaryText)
+                                }
+                            }
+                        }
+                    }
+                    
+                    // Toggle per seguire il tema di sistema
+                    Toggle(NSLocalizedString("Use System Appearance", comment: "Field label"), 
+                           isOn: $themeManager.followSystemTheme.animation(.easeInOut(duration: 0.3)))
+                        .foregroundColor(themeManager.colors.text)
+                        .toggleStyle(SwitchToggleStyle(tint: themeManager.colors.accent))
+                        .onChange(of: themeManager.followSystemTheme) { newValue in
+                            if newValue {
+                                // Se attivata, imposta il valore a isDarkMode
+                                isDarkMode = themeManager.isDarkMode
+                            }
+                        }
+                    
+                    // Toggle per dark mode (disabilitato se usiamo il tema di sistema)
+                    Toggle(NSLocalizedString("Dark Mode", comment: "Field label"), 
+                           isOn: $isDarkMode.animation(.easeInOut(duration: 0.3)))
+                        .foregroundColor(themeManager.colors.text)
+                        .toggleStyle(SwitchToggleStyle(tint: themeManager.colors.accent))
+                        .disabled(themeManager.followSystemTheme)
+                        .opacity(themeManager.followSystemTheme ? 0.6 : 1.0)
                 }
+                .listRowBackground(themeManager.colors.secondaryBackground)
                 
                 // Data management section
-                Section(header: Text(NSLocalizedString("Data Management", comment: "Section title"))) {
+                Section(header: Text(NSLocalizedString("Data Management", comment: "Section title"))
+                    .foregroundColor(themeManager.colors.secondaryText)) {
                     Button(action: { isExporting = true }) {
                         Label(
                             NSLocalizedString("Export Data", comment: "Button label"),
                             systemImage: "square.and.arrow.up"
                         )
+                        .foregroundColor(themeManager.colors.text)
                     }
                     
                     Button(action: { isImporting = true }) {
@@ -101,6 +171,7 @@ struct SettingsView: View {
                             NSLocalizedString("Import Data", comment: "Button label"),
                             systemImage: "square.and.arrow.down"
                         )
+                        .foregroundColor(themeManager.colors.text)
                     }
                     
                     Button(action: { showingResetAlert = true }) {
@@ -111,18 +182,26 @@ struct SettingsView: View {
                         .foregroundColor(.red)
                     }
                 }
+                .listRowBackground(themeManager.colors.secondaryBackground)
                 
                 // Save button section
                 Section {
                     Button(action: saveSettings) {
                         Text(NSLocalizedString("Save Settings", comment: "Button label"))
                             .frame(maxWidth: .infinity, alignment: .center)
-                            .foregroundColor(.white)
+                            .foregroundColor(themeManager.colors.buttonText)
+                            .padding(.vertical, 8)
                     }
-                    .listRowBackground(Color.blue)
+                    .listRowBackground(themeManager.colors.buttonBackground)
                 }
             }
             .navigationTitle(NSLocalizedString("Settings", comment: "View title"))
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    ThemeSwitcherButton(compact: true)
+                        .environmentObject(themeManager)
+                }
+            }
             // Import/Export sheet
             .fileImporter(
                 isPresented: $isImporting,
@@ -174,7 +253,15 @@ struct SettingsView: View {
                 // Load current values when view appears
                 loadCurrentSettings()
             }
+            .background(themeManager.colors.background)
+            .onChange(of: isDarkMode) { newValue in
+                withAnimation(.easeInOut(duration: 0.3)) {
+                    themeManager.isDarkMode = newValue
+                }
+            }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .accentColor(themeManager.colors.primary)
     }
     
     private func loadCurrentSettings() {
